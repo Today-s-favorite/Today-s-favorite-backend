@@ -14,7 +14,7 @@ create table user(
     nickname varchar(100) not null,                 --  닉네임
     one_favorite varchar(50) not null,              -- 최애
     created_at datetime default current_timestamp,  -- 가입일시
-    profile_picture varchar(255),                   -- 프로필 사진
+    profile_picture longblob,                   -- 프로필 사진
     email varchar(100) not null,                    -- 이메일
     user_intro varchar(500) default null,           -- 소개글
     theme varchar(50) not null                      -- 테마     뭐로 하면 좋나요 헥사코드?
