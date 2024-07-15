@@ -1,4 +1,6 @@
 # AWS RDS 설정
+host name: DB endpoint 입력
+
 DB 인스턴스 이름: favorite
 
 관리자 ID: admin
