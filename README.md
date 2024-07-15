@@ -40,3 +40,19 @@ DB 이름: favorite
 5. insta_upload.py에서 파일 주소 변견하고 DB 설정 변경 후 실행
 
 6. 인스타랑 트위터 실행 순서는 상관 없는데 트위터는 파일 순서 저대로 실행 필수
+
+# workbench에서 DB 접근하기 (admin 계정에서 실행)
+1. 빈 쿼리창에
+   use mysql; 
+   select host, user, authentication_string from mysql.user; 실행
+
+2. create user ' 사용자 id ' @ ' 접속할 ip' identified by '비밀번호';
+
+3. 사용자 삭제: drop user '사용자 id'
+
+4. 권한 부여하기: grant all privileges on DB명.* to '사용자 id'@'%' identified by '비밀번호';
+
+5. 실행시키기 : flush privileges;
+
+6. 생성한 user 정보로 위의 workbench 연결하기 동작
+
