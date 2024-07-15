@@ -56,3 +56,5 @@ DB 이름: favorite
 
 6. 생성한 user 정보로 위의 workbench 연결하기 동작
 
+7. 여기 id, pw 내가 만들면 됨
+
