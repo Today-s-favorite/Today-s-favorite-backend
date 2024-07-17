@@ -142,3 +142,5 @@ alarm.txt
 # 기타 파일
 .gitignore
 homeRouter.js
+
+/mysql-connector-python-9.0.0/
