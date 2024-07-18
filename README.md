@@ -56,12 +56,14 @@ DB 이름: favorite
 
 # mysql.connector import 안될 시
 settings.json 파일 찾아서
+
 {
     "python.analysis.extraPaths": [
     "C:/Favorite_project/Today-s-favorite-backend/mysql-connector-python-9.0.0"
 ],
 
 }
+
 추가
 
 7. 생성한 user 정보로 위의 workbench 연결하기 동작
