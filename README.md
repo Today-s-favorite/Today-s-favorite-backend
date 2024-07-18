@@ -54,7 +54,17 @@ DB 이름: favorite
 
 5. 실행시키기 : flush privileges;
 
-6. 생성한 user 정보로 위의 workbench 연결하기 동작
+# mysql.connector import 안될 시
+settings.json 파일 찾아서
+{
+    "python.analysis.extraPaths": [
+    "C:/Favorite_project/Today-s-favorite-backend/mysql-connector-python-9.0.0"
+],
 
-7. 여기 id, pw 내가 만들면 됨
+}
+추가
+
+7. 생성한 user 정보로 위의 workbench 연결하기 동작
+
+8. 여기 id, pw 내가 만들면 됨
 
