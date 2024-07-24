@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join</title>
+    <link rel="stylesheet" href="../css/signup.css" />
+  </head>
+  <body>
+    <form id="signup" onsubmit="join(event)">
+      <table>
+        <tr>
+          <td><h1>오늘의 최애</h1></td>
+        </tr>
+        <tr>
+          <td>아이디</td>
+        </tr>
+        <tr>
+          <td class="id-container">
+            <input type="text" class="full-width text" id="user_id" />
+            <input type="button" value="중복확인" class="small-btn" />
+          </td>
+        </tr>
+        <tr>
+          <td>비밀번호</td>
+        </tr>
+        <tr>
+          <td>
+            <input type="password" class="full-width text" id="user_pw" />
+          </td>
+        </tr>
+        <tr>
+          <td>비밀번호 확인</td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="password"
+              class="full-width text"
+              id="passwordConfirm"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>닉네임</td>
+        </tr>
+        <tr>
+          <td><input type="text" class="full-width text" id="nickname" /></td>
+        </tr>
+        <tr>
+          <td>이메일</td>
+        </tr>
+        <tr>
+          <td class="email-container">
+            <input type="text" class="email" id="user_email" /> @
+            <select id="emailDomain">
+              <option>naver.com</option>
+              <option>gmail.com</option>
+              <option>daum.net</option>
+              <option>nate.com</option>
+            </select>
+            <input type="button" value="이메일 인증" class="small-btn" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" class="checkbox" id="terms" />
+            <label for="terms">약관동의</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="button" value="가입 취소" class="btn" />
+            <input type="submit" value="회원가입" class="btn" />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script src="/javascript/signup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.container {
+  text-align: center;
+}
+h1 {
+  font-size: 3em;
+}
+.login-form {
+  background-color: #e9e9e9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 0 auto;
+}
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: calc(100% - 40px);
+  height: 45px;
+  font-size: 20px;
+  font-weight: 600;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 40px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 30px 30px;
+}
+.login-form input[type="text"] {
+  background-image: url("Rectangle 28.png");
+}
+.login-form input[type="password"] {
+  background-image: url("lock.png");
+}
+.login-form .btn {
+  width: 50%;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  background-color: rgba(135, 141, 147, 0.34);
+  cursor: pointer;
+}
+.login-form .btn:active {
+  background-color: rgb(133, 139, 148);
+}
+.login-form a {
+  font-size: 15px;
+  color: rgb(61, 62, 62);
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+}

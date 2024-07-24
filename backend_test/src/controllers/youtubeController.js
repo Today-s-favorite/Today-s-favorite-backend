@@ -1,4 +1,4 @@
-const youtubeService = require('./youtubeService');
+const youtubeService = require('../services/youtubeService');
 
 async function getAndSaveVideos(req, res) {
   const artistName = req.params.artistName;

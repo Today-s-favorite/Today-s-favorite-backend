@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Today's favorite My Page</title>
+    <link rel="stylesheet" href="my.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="profile">
+        <img
+          class="profile-img"
+          src="https://github.com/Today-s-favorite/Today-s-favorite-frontend/blob/main/%EB%A1%9C%EA%B3%A0%20%EB%AA%A8%EC%9D%8C%EC%A7%91/profile.png?raw=true"
+          alt="Profile Image"
+        />
+        <div class="nickname"><span>❤️</span> 닉네임 님</div>
+        <div class="introduction">진짜 TMI다. Too Much I love you.</div>
+        <button class="edit-profile">프로필 편집</button>
+      </div>
+      <nav>
+        <a
+          href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%EC%9D%98%20%EC%B5%9C%EC%95%A0/main_IU/main_IU.html"
+        >
+          Home</a
+        >
+        |
+        <a
+          href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%EC%9D%98%20%EC%B5%9C%EC%95%A0/my/my.html"
+        >
+          My page</a
+        >
+        |
+        <a
+          href="http://127.0.0.1:5500/%EC%98%A4%EB%8A%98%EC%9D%98%20%EC%B5%9C%EC%95%A0/login.html"
+          >Logout</a
+        >
+      </nav>
+      <div class="search-bar">
+        <input type="text" id="name" placeholder="차애 찾으러 가기..." />
+        <button onclick="checkPeople()" class="search-btn"></button>
+        <div id="message"></div>
+      </div>
+      <div class="content">
+        <div class="like-header"><span class="like-icon">❤️</span> My Like</div>
+        <div class="post">
+          <div class="post-title">
+            <img
+              src="https://github.com/Today-s-favorite/Today-s-favorite-frontend/blob/main/%EB%A1%9C%EA%B3%A0%20%EB%AA%A8%EC%9D%8C%EC%A7%91/naver.png?raw=true"
+              alt="Naver Icon"
+              style="width: 30px; height: auto"
+            />
+            <span>Naver</span>
+          </div>
+          <p class="post-content">
+            "설렘가득, 눈맞춤"...아이유, 스윗한 출국"<br />
+            아이유가 해외 일정을 위해 26일 오전 인천국제공항을 통해 인도네시아
+            자카르타로 출국함.<br />
+          </p>
+          <div class="post-footer">
+            <span class="like-icon">❤️</span>
+            <span class="like-count">0</span>
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-title">
+            <img
+              src="https://github.com/Today-s-favorite/Today-s-favorite-frontend/blob/main/%EB%A1%9C%EA%B3%A0%20%EB%AA%A8%EC%9D%8C%EC%A7%91/youtube.png?raw=true"
+              alt="YouTube Icon"
+              style="width: 30px; height: auto"
+            />
+            <span>YouTube</span>
+          </div>
+          <div class="youtube-thumbnail">
+            <img
+              src="https://via.placeholder.com/451x260"
+              alt="YouTube Thumbnail"
+            />
+          </div>
+          <div class="post-footer">
+            <span class="like-icon">❤️</span>
+            <span class="like-count">0</span>
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-title">
+            <img
+              src="https://github.com/Today-s-favorite/Today-s-favorite-frontend/blob/main/%EB%A1%9C%EA%B3%A0%20%EB%AA%A8%EC%9D%8C%EC%A7%91/instagram.png?raw=true"
+              alt="Instagram Icon"
+              style="width: 30px; height: auto"
+            />
+            <span>instagram</span>
+          </div>
+          <div class="instagram-img">
+            <img
+              src="https://via.placeholder.com/451x260"
+              alt="Instagram photo"
+            />
+          </div>
+          <p class="post-content">DB에서 가져온 내용 <br /></p>
+          <div class="post-footer">
+            <span class="like-icon">❤️</span>
+            <span class="like-count">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="my.js"></script>
+  </body>
+</html>

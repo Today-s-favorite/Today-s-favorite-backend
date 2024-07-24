@@ -3,18 +3,20 @@ const bodyParser = require('body-parser');
 const cors = require("cors");
 const dotenv = require("dotenv");
 const session = require("express-session");
-const signUpRouter = require("./signUpRouter");
-const loginRouter = require("./loginRouter");
-const logoutRouter = require("./logoutRouter");
-const mypageRouter = require("./mypageRouter");
-const resetPasswordRouter = require("./resetPasswordRouter");
-const passwordRouter = require('./passwordRouter');
-const adminRouter = require('./adminRouter');
-const naverRouter = require('./naverRouter');
-const youtubeRouter = require('./youtubeRouter'); // 새로운 YouTube 라우터 불러오기
+const signUpRouter = require("./src/routes/signUpRouter");
+const loginRouter = require("./src/routes/loginRouter");
+const logoutRouter = require("./src/routes/logoutRouter");
+const mypageRouter = require("./src/routes/mypageRouter");
+const resetPasswordRouter = require("./src/routes/resetPasswordRouter");
+const passwordRouter = require('./src/routes/passwordRouter');
+const adminRouter = require('./src/routes/adminRouter');
+const naverRouter = require('./src/routes/naverRouter');
+const youtubeRouter = require('./src/routes/youtubeRouter'); // 새로운 YouTube 라우터 불러오기
 const mysql = require('mysql');
-const instagramRouter = require('./instagramRouter'); // 새로운 Instagram 라우터 불러오기
-const twitterRouter = require('./twitterRouter'); // 새로운 네이버 라우터 불러오기
+const instagramRouter = require('./src/routes/instagramRouter'); // 새로운 Instagram 라우터 불러오기
+const twitterRouter = require('./src/routes/twitterRouter'); // 새로운 네이버 라우터 불러오기
+const path = require('path'); // path 모듈 추가
+
 
 // 환경 변수 설정
 dotenv.config({ path: './src/routes/.env' });
@@ -26,7 +28,8 @@ const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT
 });
 
 db.connect((err) => {
@@ -52,6 +55,11 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use(express.static(path.join(__dirname, 'public')));
+// EJS 설정
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'src/views'));
+
 app.use("/sign", signUpRouter);
 app.use("/login", loginRouter);
 app.use("/logout", logoutRouter);
@@ -63,6 +71,11 @@ app.use('/naver', naverRouter); // 새로운 네이버 라우터 사용
 app.use('/api', youtubeRouter); // 새로운 YouTube 라우터 사용
 app.use('/instagram', instagramRouter); // 새로운 Instagram 라우터 사용
 app.use('/twitter', twitterRouter); // 새로운 네이버 라우터 사용
+
+// 라우트에서 뷰 렌더링
+app.get('/', (req, res) => {
+  res.render('login', { title: 'login' });
+});
 
 // 에러 핸들링 미들웨어 추가
 app.use((err, req, res, next) => {

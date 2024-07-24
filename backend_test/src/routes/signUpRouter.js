@@ -6,6 +6,11 @@ const querystring = require('querystring');
 const signUpService = require('../services/signUpService');
 require('dotenv').config();
 
+// 라우트에서 뷰 렌더링
+router.get('/signup', (req, res) => {
+  res.render('signup', { title: 'signup' });
+});
+
 router.post("/signup", signUp);
 router.post("/auth", auth);
 router.post("/authcheck", emailCheck);

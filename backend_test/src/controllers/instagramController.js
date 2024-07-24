@@ -1,4 +1,4 @@
-const pool = require('../databaseSet');
+const pool = require('../../config/databaseSet');
 
 const getMediaByDate = async (date) => {
   const query = `

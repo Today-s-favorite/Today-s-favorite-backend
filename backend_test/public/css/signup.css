@@ -1,0 +1,73 @@
+h1 {
+  font-size: 3em;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  text-align: left; /* 왼쪽에 있는게 더 예쁜 것 같아서 추가했는데 마음에 안드시면 다시 center로 바꾸면 됩니다 */
+}
+table {
+  width: 530px;
+  height: auto;
+  margin: auto;
+  font-weight: 550;
+}
+.text,
+select,
+.btn,
+.checkbox {
+  width: 120px;
+  height: 32px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+  margin-bottom: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.email {
+  width: 230px;
+  height: 32px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+  margin-bottom: 10px;
+}
+
+.full-width {
+  width: 380px;
+}
+.btn {
+  background-color: rgb(164, 199, 255);
+  font-weight: 500;
+}
+.small-btn {
+  width: 100px;
+  height: 32px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  background-color: rgb(164, 199, 255);
+  border: none; /* 테두리 제거 */
+  font-weight: 500;
+}
+
+.checkbox {
+  width: auto;
+  height: auto;
+}
+
+.email-container,
+.id-container {
+  display: flex;
+  align-items: center;
+}
+
+.email-container .small-btn,
+.id-container .small-btn {
+  margin-left: 10px;
+}

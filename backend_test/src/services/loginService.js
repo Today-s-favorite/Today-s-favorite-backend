@@ -2,7 +2,7 @@ const { comparePassword } = require('../utils/cryptoUtils');
 const pool = require('../../config/databaseSet');
 
 // 로그인 인증 함수
-const authenticate = async (user_id, inputPassword) => {
+const authenticate = async (user_id, user_password) => {
   try {
     const [rows] = await pool.query("SELECT * FROM user WHERE user_id = ?", [user_id]);
 
@@ -14,7 +14,7 @@ const authenticate = async (user_id, inputPassword) => {
     const user = rows[0];
 
     // 저장된 해시된 비밀번호와 입력된 비밀번호 비교
-    const isMatch = comparePassword(inputPassword, user.user_pw, user.user_salt);
+    const isMatch = comparePassword(user_password, user.user_pw, user.user_salt);
 
     if (!isMatch) {
       console.log("비밀번호가 일치하지 않음");
