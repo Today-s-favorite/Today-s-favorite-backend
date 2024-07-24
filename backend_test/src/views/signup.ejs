@@ -18,7 +18,7 @@
         <tr>
           <td class="id-container">
             <input type="text" class="full-width text" id="user_id" />
-            <input type="button" value="중복확인" class="small-btn" />
+            <input type="button" value="중복확인" class="small-btn" onclick="checkDuplicate()" />
           </td>
         </tr>
         <tr>
@@ -59,7 +59,7 @@
               <option>daum.net</option>
               <option>nate.com</option>
             </select>
-            <input type="button" value="이메일 인증" class="small-btn" />
+            <input type="button" value="이메일 인증" class="small-btn" onclick="verifyEmail()"/>
           </td>
         </tr>
         <tr>
@@ -70,7 +70,7 @@
         </tr>
         <tr>
           <td>
-            <input type="button" value="가입 취소" class="btn" />
+            <input type="button" value="가입 취소" class="btn" onclick = "cancelSignup()"/>
             <input type="submit" value="회원가입" class="btn" />
           </td>
         </tr>
