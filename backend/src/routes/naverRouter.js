@@ -68,4 +68,42 @@ router.post('/news/:id/thumb_down', async (req, res) => {
   }
 });
 
+// 네이버 기사 좋아요 취소
+router.delete('/news/:id/heart', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const connection = await pool.getConnection(async (conn) => conn);
+    const [result] = await connection.query("UPDATE naver SET heart = 0 WHERE naver_id = ?", [id]);
+    connection.release();
+
+    if (result.affectedRows === 0) {
+      return res.status(404).send('해당 기사를 찾을 수 없습니다.');
+    }
+
+    res.status(200).send('좋아요가 초기화되었습니다.');
+  } catch (error) {
+    console.error('Failed to reset heart count:', error);
+    res.status(500).send('좋아요를 초기화하는 중 오류가 발생했습니다');
+  }
+});
+
+// 네이버 기사 싫어요 취소
+router.delete('/news/:id/thumb_down', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const connection = await pool.getConnection(async (conn) => conn);
+    const [result] = await connection.query("UPDATE naver SET thumb_down = 0 WHERE naver_id = ?", [id]);
+    connection.release();
+
+    if (result.affectedRows === 0) {
+      return res.status(404).send('해당 기사를 찾을 수 없습니다.');
+    }
+
+    res.status(200).send('싫어요가 초기화되었습니다.');
+  } catch (error) {
+    console.error('Failed to reset thumb_down count:', error);
+    res.status(500).send('싫어요를 초기화하는 중 오류가 발생했습니다');
+  }
+});
+
 module.exports = router;

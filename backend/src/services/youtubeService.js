@@ -17,6 +17,16 @@ exports.dislikeVideo = async (id) => {
     await db.query('UPDATE youtube SET thumb_down = thumb_down + 1 WHERE youtube_id = ?', [id]);
 };
 
+// 비디오에 좋아요를 취소하는 서비스 함수
+exports.unlikeVideo = async (id) => {
+    await db.query('UPDATE youtube SET heart = heart - 1 WHERE youtube_id = ? AND heart > 0', [id]);
+};
+
+// 비디오에 싫어요를 취소하는 서비스 함수
+exports.undislikeVideo = async (id) => {
+    await db.query('UPDATE youtube SET thumb_down = thumb_down - 1 WHERE youtube_id = ? AND thumb_down > 0', [id]);
+};
+
 // 날짜별 비디오 데이터를 가져오는 서비스 함수
 exports.getVideosByDate = async (date) => {
     const [rows] = await db.query('SELECT * FROM youtube WHERE date_y = ?', [date]);

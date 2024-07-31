@@ -32,6 +32,28 @@ exports.dislikeVideo = async (req, res) => {
     }
 };
 
+// 비디오에 좋아요를 취소하는 함수
+exports.unlikeVideo = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await YoutubeService.unlikeVideo(id);
+        res.status(200).json({ message: '비디오에서 좋아요를 취소했습니다.' });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+// 비디오에 싫어요를 취소하는 함수
+exports.undislikeVideo = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await YoutubeService.undislikeVideo(id);
+        res.status(200).json({ message: '비디오에서 싫어요를 취소했습니다.' });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
 // 날짜별 비디오를 검색하는 함수
 exports.getVideosByDate = async (req, res) => {
     try {
